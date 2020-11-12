@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hamburger Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        #btn{
+            display: none;
+        }
+        .icon-btn,
+        .icon-btn::before,
+        .icon-btn::after{
+            position: absolute;
+            width:60px ;
+            height: 6px;
+            border-radius: 5px;
+            background-color: #62b6aa;
+            transition: 0.5s;
+            display: block;
+        }
+        .icon-btn{
+            margin:50px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .icon-btn::before{
+            content: "";
+            transform: translateY(-30px);
+            -webkit-transform: translateY(-17px);
+        }
+        .icon-btn::after{
+            content: "";
+            transform: translateY(30px);
+            -webkit-transform: translateY(17px);
+        }
+        #btn:checked + .icon-btn{
+            width: 0;
+        }
+        #btn:checked + .icon-btn::before{
+            transform: rotate(45deg) translate(0px);
+            -webkit-transform: rotate(45deg) translate(0px);
+        }
+        #btn:checked + .icon-btn::after{
+            transform: rotate(-45deg) translate(0px);
+            -webkit-transform: rotate(-45deg) translate(0px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+<input id="btn" type="checkbox">
+<label for="btn" class="icon-btn"></label>
+
+</body>
+</html>
